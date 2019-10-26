@@ -29,17 +29,17 @@ static const Rule rules[] = {
 	 */
 	/* class                instance    title       tags mask     isfloating   monitor */
 	{ "st-256color",        NULL,       NULL,       1,            0,           -1 },
-    { "firefox",            NULL,       NULL,       1 << 2,       0,           -1 },
-	{ "goland",             NULL,       NULL,       1 << 3,       0,            2 },
-	{ "idea",               NULL,       NULL,       1 << 3,       0,            2 },
-	{ "datagrip",           NULL,       NULL,       1 << 4,       0,            2 },
-	{ "TelegramDesktop",    NULL,       NULL,       1 << 5,       0,            1 },
-	{ "Spotify",            NULL,       NULL,       1 << 6,       0,            1 },
+    { "firefox",            NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "goland",             NULL,       NULL,       1 << 2,       0,            2 },
+	{ "idea",               NULL,       NULL,       1 << 2,       0,            2 },
+	{ "datagrip",           NULL,       NULL,       1 << 3,       0,            2 },
+	{ "TelegramDesktop",    NULL,       NULL,       1 << 4,       0,            1 },
+	{ "Spotify",            NULL,       NULL,       1 << 5,       0,            1 },
 
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.5; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
@@ -66,7 +66,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *betterlockscreen[] = { "betterlockscreen", "-l", NULL };
 static const char *suspend[] = { "systemctl", "suspend", NULL };
 
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_green_rain, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_green_rain, "-sb", col_gray2, "-sf", col_green_rain , NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 // for pulse compatible //
