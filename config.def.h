@@ -83,8 +83,8 @@ static const char *brightnessdown[] = { "xbacklight", "-dec", "10", NULL };
 
 static Key keys[] = {
 	/* modifier                     key                         function            argument */
-    { 0,                            XF86XK_MonBrightnessUp,    spawn,               {.v = brightnessup } },
-    { 0,                            XF86XK_MonBrightnessDown,    spawn,             {.v = brightnessdown } },
+    { 0,                            XF86XK_MonBrightnessUp,     spawn,              {.v = brightnessup } },
+    { 0,                            XF86XK_MonBrightnessDown,   spawn,              {.v = brightnessdown } },
     { 0,                            XF86XK_AudioRaiseVolume,    spawn,              {.v = upvol } },
     { 0,                            XF86XK_AudioLowerVolume,    spawn,              {.v = downvol } },
     { 0,                            XF86XK_AudioMute,           spawn,              {.v = mute } },
