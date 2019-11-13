@@ -16,11 +16,11 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_green_rain[]  = "#1ec503";
+static const char col_dark_blue[]   = "#1565C0";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_green_rain,  col_green_rain },
+	[SchemeSel]  = { col_gray4, col_dark_blue,  col_dark_blue },
 };
 
 /* tagging */
@@ -70,7 +70,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *betterlockscreen[] = { "betterlockscreen", "-l", NULL };
 static const char *suspend[] = { "systemctl", "suspend", NULL };
 
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_green_rain, "-sb", col_gray2, "-sf", col_green_rain , NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_dark_blue, "-sb", col_gray2, "-sf", col_dark_blue , NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 // for pulse compatible //
