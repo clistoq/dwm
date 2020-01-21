@@ -38,7 +38,7 @@ static const Rule rules[] = {
 	{ "idea",               NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "datagrip",           NULL,       NULL,       1 << 3,       0,            2 },
 	{ "TelegramDesktop",    NULL,       NULL,       1 << 4,       0,           -1 },
-	{ "spotify",            NULL,       NULL,       1 << 5,       0,            1 },
+	{ "Spotify Premium",    NULL,       NULL,       1 << 5,       0,            1 },
 
 };
 
@@ -73,7 +73,7 @@ static const char *suspend[] = { "systemctl", "suspend", NULL };
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_dark_blue, "-sb", col_gray2, "-sf", col_dark_blue , NULL };
 static const char *termcmd[]  = { "st", NULL };
 
-// for pulse compatible //
+// for pulse volume management //
 static const char *upvol[] = { "amixer", "-q", "sset", "Master", "1%+", NULL };
 static const char *downvol[] = { "amixer", "-q", "sset", "Master", "1%-", NULL };
 static const char *mute[] = { "amixer", "-q", "-D", "pulse", "sset", "Master", "toggle", NULL };
@@ -88,6 +88,9 @@ static Key keys[] = {
     { 0,                            XF86XK_AudioRaiseVolume,    spawn,              {.v = upvol } },
     { 0,                            XF86XK_AudioLowerVolume,    spawn,              {.v = downvol } },
     { 0,                            XF86XK_AudioMute,           spawn,              {.v = mute } },
+    { 0,                            XK_Print,                   spawn,              SHCMD("exec maim --window=$(xdotool getactivewindow) --format=png --hidecursor --quality 10 ~/Pictures/Screenshots/maim-$(date +%H%M%S).png") },
+    { Mod1Mask,                     XK_Print,                   spawn,              SHCMD("exec maim --window=$(xdotool getactivewindow) --format=png --hidecursor --quality 10 | xclip -selection clipboard -target image/png") },
+    { ControlMask,                  XK_Print,                   spawn,              SHCMD("exec maim --select | xclip -selection clipboard -target image/png") },
 	{ MODKEY,                       XK_d,                       spawn,              {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return,                  spawn,              {.v = termcmd } },
 	//{ MODKEY,                       XK_b,                       togglebar,          {0} },
@@ -110,14 +113,14 @@ static Key keys[] = {
 	{ MODKEY,                       XK_comma,                   focusmon,           {.i = -1 } },
 	{ MODKEY,                       XK_period,                  focusmon,           {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,                   tagmon,             {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_period,                  tagmon,             {.i = +1 } },
-	TAGKEYS(                        XK_1,                                           0)
-	TAGKEYS(                        XK_2,                                           1)
-	TAGKEYS(                        XK_3,                                           2)
-	TAGKEYS(                        XK_4,                                           3)
-	TAGKEYS(                        XK_5,                                           4)
-	TAGKEYS(                        XK_6,                                           5)
-	TAGKEYS(                        XK_7,                                           6)
+    { MODKEY|ShiftMask,             XK_period,                  tagmon,             {.i = +1 } },
+    TAGKEYS(                        XK_1,                                           0)
+    TAGKEYS(                        XK_2,                                           1)
+    TAGKEYS(                        XK_3,                                           2)
+    TAGKEYS(                        XK_4,                                           3)
+    TAGKEYS(                        XK_5,                                           4)
+    TAGKEYS(                        XK_6,                                           5)
+    TAGKEYS(                        XK_7,                                           6)
 	TAGKEYS(                        XK_8,                                           7)
 	TAGKEYS(                        XK_9,                                           8)
 	{ MODKEY|ShiftMask,             XK_q,                       quit,               {0} },
