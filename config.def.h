@@ -38,7 +38,7 @@ static const Rule rules[] = {
 	{ "idea",               NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "datagrip",           NULL,       NULL,       1 << 3,       0,            2 },
 	{ "TelegramDesktop",    NULL,       NULL,       1 << 4,       0,           -1 },
-	{ "Spotify Premium",    NULL,       NULL,       1 << 5,       0,            1 },
+	{ "spotify-client",     NULL,       NULL,       1 << 5,       0,            2 },
 
 };
 
